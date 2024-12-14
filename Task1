@@ -1,0 +1,66 @@
+/*  TASK ONE: SIMPLE CALCULATOR
+ Create a Java program that acts as a basic calculator. It should prompt the user to
+ enter two numbers and choose an operation (addition, subtraction, multiplication,
+ division). Then, it should perform the selected operation and display the result to the
+ user.*/
+
+import java.util.Scanner;
+
+public class Calculator {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // Taking user input:
+        System.out.println("Enter the first number:");
+        double num1 = input.nextDouble();
+
+        System.out.println("-------------------------------------");
+
+        System.out.println("Enter the Second number:");
+        double num2 = input.nextDouble();
+
+        System.out.println("-------------------------------------");
+
+        // Selecting Operation:
+        System.out.println("Choose Operation");
+        System.out.println("1. Addition (+): ");
+        System.out.println("2. Subtraction (-): ");
+        System.out.println("3. Multiplication (*): ");
+        System.out.println("4. Division (/): ");
+
+        System.out.println("-------------------------------------");
+
+        // Getting user choice:
+        System.out.println("Enter your choice (1-4): ");
+        int choice = input.nextInt();
+
+        System.out.println("-------------------------------------");
+
+        // Performing operation and displaying the result:
+       switch (choice) {
+        case 1: // Addition
+            System.out.println("Result: " + (num1+num2));
+            break;
+            
+        case 2: // Subtraction
+            System.out.println("Result: " + (num1-num2));
+            break;
+
+        case 3: // Multiplication
+            System.out.println("Result: " + (num1*num2));
+            break;
+
+        case 4: // Division
+            if (num2 != 0) {
+                System.out.println("Result: " + (num1/num2));
+            }
+            else {
+                System.out.println("Division by zero is not allowed:");
+            }
+            break;
+        default:
+                System.out.println("Invalid Choice");
+            break;
+       }
+    }
+}
